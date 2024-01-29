@@ -9,13 +9,16 @@
         <UseWPF>true</UseWPF>
     </PropertyGroup>
 
+
     <ItemGroup>
+      <PackageReference Include="Blazor.Extensions.Canvas" Version="1.1.1" />
+      <PackageReference Include="Blazored.Modal" Version="7.2.0" />
       <PackageReference Include="bootstrap" Version="5.3.2" />
+      <PackageReference Include="BootstrapBlazor" Version="8.1.9" />
       <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="8.0.6" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Components\" />
       <Folder Include="wwwroot\images\" />
     </ItemGroup>
 

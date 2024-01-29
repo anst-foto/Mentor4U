@@ -7,9 +7,9 @@
 
     background-size:cover;
 
-    height:auto;
+    height:720px;
 
-    width:auto;
+    width:1280px;
     
 }
 html, body {
@@ -59,4 +59,4 @@ a, .btn-link {
         position: absolute;
         right: 0.75rem;
         top: 0.5rem;
-    }
+

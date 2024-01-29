@@ -6,11 +6,11 @@
         xmlns:blazor="clr-namespace:Microsoft.AspNetCore.Components.WebView.Wpf;assembly=Microsoft.AspNetCore.Components.WebView.Wpf"
         
         xmlns:local="clr-namespace:Mentor4U.WpfClassic"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="720" Width="1280">
     <Grid>
         <blazor:BlazorWebView HostPage="wwwroot\index.html" Services="{DynamicResource services}">
             <blazor:BlazorWebView.RootComponents>
-                <blazor:RootComponent Selector="#app" ComponentType="{x:Type local:Index}" />
+                <blazor:RootComponent Selector="#app" ComponentType="{x:Type local:Index1}" />
             </blazor:BlazorWebView.RootComponents>
         </blazor:BlazorWebView>
 
