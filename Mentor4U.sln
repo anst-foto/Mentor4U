@@ -5,6 +5,10 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mentor4U.WpfClassic", "Mentor4U.WpfClassic\Mentor4U.WpfClassic.csproj", "{ADCA79DD-FB66-4129-85F4-ACC76DD296BB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{9413970A-0448-409D-A8D0-B7183A8E8A7A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mentor4U.Domain", "Mentor4U.Domain\Mentor4U.Domain.csproj", "{9ECCBF44-3536-46F0-9742-5429B04F67C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{ADCA79DD-FB66-4129-85F4-ACC76DD296BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADCA79DD-FB66-4129-85F4-ACC76DD296BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADCA79DD-FB66-4129-85F4-ACC76DD296BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ECCBF44-3536-46F0-9742-5429B04F67C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ECCBF44-3536-46F0-9742-5429B04F67C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ECCBF44-3536-46F0-9742-5429B04F67C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ECCBF44-3536-46F0-9742-5429B04F67C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9ECCBF44-3536-46F0-9742-5429B04F67C8} = {9413970A-0448-409D-A8D0-B7183A8E8A7A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {625AD341-941B-4243-B8F3-C51EB7E4FCA3}
