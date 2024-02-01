@@ -1,0 +1,69 @@
+﻿<Window x:Class="Mentor4U.WpfClassic.Windows.StartWindow.PersonalStartWindows.SorokinVariantStartWindow.StartWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Name="SorokinStartWindow"
+        Height="488" Width="850"
+        WindowState="Normal"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        WindowStyle="None" BorderThickness="2" BorderBrush="Black">
+
+    <Window.Background>
+        <ImageBrush>
+            <ImageBrush.ImageSource>
+                <BitmapImage UriSource="Resources/Images/Background.jpg"/>
+            </ImageBrush.ImageSource>
+        </ImageBrush>
+    </Window.Background>
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Icons/Icons.xaml"/>
+                <ResourceDictionary Source="Resources/Styles/SorokinStartWindowStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+        <Canvas DataContext="{Binding ElementName=SorokinStartWindow}" Width="{Binding Path=Width}" >
+            <Button x:Name="BtnCloseApp" Canvas.Top="5" Canvas.Right="9" Width="30" Click="BtnCloseApp_Click">
+                <Button.Content>
+                    <Image Source="Resources/Images/CloseButton.png"/>
+                </Button.Content>
+            </Button>
+            <DockPanel  Width="{Binding Path=Width}" Height="{Binding Path=Height}" LastChildFill="False">
+            <Image DockPanel.Dock="Top" Source="Resources/Images/logo.png" Style="{StaticResource StyleLogo }" />
+            <Grid  DockPanel.Dock="Top" Style="{StaticResource StyleCrutchtMargin}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0" Style="{StaticResource StyleBorderASSplitter}"/>
+                    <Rectangle  Grid.Row="1"  Width="{Binding Path=Width}" Style="{StaticResource StyleBackgroundHeader}"/>
+                <TextBlock  Grid.Row="1" Text="Сервис для поиска ментора" Style="{StaticResource StyleHeader}"/>
+                    <Border Grid.Row="2" Style="{StaticResource StyleBorderASSplitter}"/>
+                </Grid>
+                <StackPanel  DockPanel.Dock="Top"  Style="{StaticResource StyleButtonsPanel}">
+                    <Button Content="Найти ментора" Style="{StaticResource StyleButtonFindMentor}"/>
+                    <Button Content="Стать ментором" Style="{StaticResource StyleButtonNewMentor}"/>
+                </StackPanel>
+            <Grid  DockPanel.Dock="Top" Style="{StaticResource StyleBackgroindInfoPanel}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                <ContentControl Grid.Column="0" Content="{StaticResource InfoIcon1}" Style="{StaticResource StyleHorizontalVerticalCenterAlignment}"/>
+                    <TextBlock Grid.Column="1" Text="1000+ проверенных менторов" Style ="{StaticResource StyleInfoText}"/>
+                <ContentControl Grid.Column="2" Content="{StaticResource InfoIcon2}" Style="{StaticResource StyleHorizontalVerticalCenterAlignment}"/>
+                <TextBlock Grid.Column="3" Text="86% ответов менторов в течение 24 часов" Style ="{StaticResource StyleInfoText}"/>
+                <ContentControl Grid.Column="4" Content="{StaticResource InfoIcon3}" Style="{StaticResource StyleHorizontalVerticalCenterAlignment}"/>
+                <TextBlock Grid.Column="5" Text="Общение без посредников" Style ="{StaticResource StyleInfoText}"/>
+                </Grid>
+            </DockPanel>
+        </Canvas>
+</Window>
