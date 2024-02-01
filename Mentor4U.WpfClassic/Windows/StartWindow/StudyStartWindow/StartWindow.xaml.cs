@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Mentor4U.WpfClassic.Windows.StartWindow;
+namespace Mentor4U.WpfClassic.Windows.StartWindow.StudyStartWindow;
 
 public partial class StartWindow : Window
 {

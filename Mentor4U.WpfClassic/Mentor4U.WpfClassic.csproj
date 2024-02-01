@@ -9,7 +9,20 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Resource Include="Resources\Images\*.jpg" />
+      <Resource Include="Windows\StartWindow\StudyStartWindow\Resources\Images\background_start_window.jpg" />
+
+
+    
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <Resource Include="Windows\StartWindow\PersonalStartWindows\SorokinVariantStartWindow\Resources\Fonts\*.otf" />
+
+
+      <Resource Include="Windows\StartWindow\PersonalStartWindows\SorokinVariantStartWindow\Resources\Images\CloseButton.png" />
+      <Resource Include="Windows\StartWindow\PersonalStartWindows\SorokinVariantStartWindow\Resources\Images\Background.jpg" />
+      <Resource Include="Windows\StartWindow\PersonalStartWindows\SorokinVariantStartWindow\Resources\Images\logo.png" />
     </ItemGroup>
 
 </Project>
