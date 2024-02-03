@@ -20,7 +20,6 @@ namespace Mentor4U.WpfClassic.DAL
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=M4UDB;Username=postgres;Password=1984;");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
