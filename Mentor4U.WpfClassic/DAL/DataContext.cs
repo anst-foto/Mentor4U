@@ -19,7 +19,7 @@ namespace Mentor4U.WpfClassic.DAL
             
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {;
+        {
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
