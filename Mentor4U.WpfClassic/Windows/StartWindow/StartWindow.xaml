@@ -37,7 +37,8 @@
                     HorizontalAlignment="Right">
             <Button 
                 Content="{StaticResource IconClose}"
-                Click="ButtonClose_OnClick"/>
+                Click="ButtonClose_OnClick"
+                Style="{StaticResource StyleButtonBase}"/>
         </StackPanel>
         
         <StackPanel Grid.Row="1"
