@@ -51,10 +51,9 @@
         
         <StackPanel Grid.Row="2" 
                     Style="{StaticResource StyleButtonsPanel}">
-            <Button Content="Найти ментора"
-                    Style="{StaticResource StyleButtonFindMentor}"/>
-            <Button Content="Стать ментором"
-                    Style="{StaticResource StyleButtonNewMentor}"/>
+            <Button Content="Войти"
+                    Style="{StaticResource StyleButtonAuth}"
+                    Click="ButtonAuth_OnClick"/>
         </StackPanel>
     </Grid>
 </Window>
