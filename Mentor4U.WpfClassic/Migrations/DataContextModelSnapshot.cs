@@ -41,6 +41,10 @@ namespace Mentor4U.WpfClassic.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
@@ -53,49 +57,13 @@ namespace Mentor4U.WpfClassic.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("Scill")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.HasKey("Id");
 
                     b.ToTable("MentorsTable", (string)null);
-                });
-
-            modelBuilder.Entity("Mentor4U.Domain.Scill", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Description")
-                        .HasColumnType("text");
-
-                    b.Property<int>("MentorId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Name")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MentorId");
-
-                    b.ToTable("ScillTable", (string)null);
-                });
-
-            modelBuilder.Entity("Mentor4U.Domain.Scill", b =>
-                {
-                    b.HasOne("Mentor4U.Domain.Mentor", "Mentor")
-                        .WithMany("Scills")
-                        .HasForeignKey("MentorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Mentor");
-                });
-
-            modelBuilder.Entity("Mentor4U.Domain.Mentor", b =>
-                {
-                    b.Navigation("Scills");
                 });
 #pragma warning restore 612, 618
         }
