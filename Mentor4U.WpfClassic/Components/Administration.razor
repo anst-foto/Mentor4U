@@ -1,0 +1,41 @@
+﻿@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.WebView;
+
+@inject NavigationManager navManager
+
+
+@page "/admin"
+
+
+@if (ShowAll == true)
+{
+    @ShowingAll
+    
+}
+@switch (Choice)
+{
+    case 1:@ShowCreate; break;
+
+    case 2: @ShowMentors; break;
+
+    case 3: @ShowEdit; break;
+
+
+
+}
+
+
+@code {
+        [Parameter] public bool ShowAll { get; set; }
+
+        [Parameter] public RenderFragment ShowingAll { get; set; }
+
+        [Parameter] public RenderFragment ShowCreate { get; set; }
+
+        [Parameter] public RenderFragment ShowMentors { get; set; }
+
+        [Parameter] public RenderFragment ShowEdit { get; set; }
+
+        [Parameter] public int Choice { get; set; }= 0;
+
+}
