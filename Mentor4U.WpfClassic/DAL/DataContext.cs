@@ -10,9 +10,9 @@ namespace Mentor4U.WpfClassic.DAL
 {
     public class DataContext:DbContext
     {
-        DbSet<Mentor> Mentors { get; set; }
+       public DbSet<Mentor> Mentors { get; set; }
 
-        DbSet<Scill> Scills { get; set; }
+   
 
         public DataContext()
         {
@@ -26,7 +26,7 @@ namespace Mentor4U.WpfClassic.DAL
         {
             modelBuilder.Entity<Mentor>().ToTable("MentorsTable");
 
-            modelBuilder.Entity<Scill>().ToTable("ScillTable");
+           
         }
     }
 }

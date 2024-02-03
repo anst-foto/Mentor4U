@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Blazored.Modal;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Components.Routing;
 
 namespace Mentor4U.WpfClassic;
 
@@ -29,7 +30,17 @@ public partial class MainWindow : Window
         serviceCollection.AddWpfBlazorWebView();
         serviceCollection.AddBlazorWebView();
         serviceCollection.AddBlazoredModal();
-        Resources.Add("services",serviceCollection.BuildServiceProvider());
         
+       this.Resources.Add("services",serviceCollection.BuildServiceProvider());
+        
+    }
+    private void Handle_UrlLoading(object sender,
+    UrlLoadingEventArgs urlLoadingEventArgs)
+    {
+        if (urlLoadingEventArgs.Url.Host != "0.0.0.0")
+        {
+            urlLoadingEventArgs.UrlLoadingStrategy =
+                UrlLoadingStrategy.OpenInWebView;
+        }
     }
 }

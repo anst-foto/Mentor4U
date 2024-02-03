@@ -8,6 +8,7 @@ global using Blazored.Modal;
 global using Blazored.Modal.Services;
 
 
+
 namespace Mentor4U.WpfClassic;
 
 /// <summary>

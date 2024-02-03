@@ -12,6 +12,10 @@ namespace Mentor4U.Domain
 
         public string Name { get; set; }
 
+        public string LastName { get; set; }
+
+        public string Scill { get; set; }   
+
         public string PhotoPath { get; set; }
 
         public string Email { get; set; }
@@ -22,6 +26,6 @@ namespace Mentor4U.Domain
 
         public string Description { get; set; }
 
-        public List<Scill> Scills { get; set; }
+       
     }
 }
