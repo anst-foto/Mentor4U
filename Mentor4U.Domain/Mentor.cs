@@ -24,6 +24,7 @@ namespace Mentor4U.Domain
 
         public DateTime ActivityStart { get; set; }
 
+        public DateTime BirthDay { get; set; }
         public string Description { get; set; }
 
        

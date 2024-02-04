@@ -1,0 +1,19 @@
+﻿@using Microsoft.AspNetCore.Components.WebView;
+@using Mentor4U.WpfClassic.Models;
+
+
+@page "/show1"
+
+<div class="row text-center ">
+    <div class="col-4">
+        <div class="card"></div>
+    </div>
+</div>
+
+@code {
+    [Parameter] public MentorVM MentorVM { get; set; }
+
+    [Parameter] public bool ShowButtons { get; set; }
+
+    [Parameter] public bool ShowDetails { get; set; }
+}

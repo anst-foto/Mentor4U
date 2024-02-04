@@ -1,0 +1,116 @@
+﻿
+@using Mentor4U.WpfClassic.Models
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.WebView;
+@using Microsoft.AspNetCore.Components.Forms;
+@using BootstrapBlazor.Components;
+@using Mentor4U
+
+
+@page "/edit"
+
+
+<div>
+    <EditForm Model="mentor" OnSubmit="OnSubmit">
+        <DataAnnotationsValidator/>
+        <div class="row-cols-6 text-center alert alert-light">
+            @{
+                string showName;
+                if (mentor.Name != null)
+                {
+                    showName = $"Изменить {mentor.Name}";
+                }
+                else
+                    showName = "Введите имя";
+            }
+            <label class="text-bg-dark text-center" >@showName</label>
+            <InputText  @bind-Value="mentor.Name" />
+            @{
+                string showLastName;
+                if (mentor.LastName != null)
+                {
+                    showLastName = $"Изменить {mentor.LastName}";
+                }
+                else
+                    showLastName = "Введите фамилию ";
+            }
+            <label class="text-bg-dark text-center">@showLastName</label>
+            <InputText @bind-Value="mentor.LastName"/>
+            @{
+                string showScill;
+                if (mentor.Scill != null)
+                {
+                    showScill = $"Изменить {mentor.Scill}";
+                }
+                else
+                    showScill = "Введите название профессии";
+            }
+            <label class="text-bg-dark text-center">@showScill</label>
+            <InputText @bind-Value="mentor.Scill"/>
+            @{
+                string showPhone;
+                if (mentor.Phone != null)
+                {
+                    showPhone = $"Изменить {mentor.Phone}";
+                }
+                else
+                    showPhone = "Введите номер телефона ";
+            }
+            <label class="text-bg-dark text-center">@showPhone</label>
+            <InputText @bind-Value="mentor.Phone" />
+            @{
+                string showMail;
+                if (mentor.Email != null)
+                {
+                    showMail = $"Изменить {mentor.Email}";
+                }
+                else
+                    showMail = "Введите email ";
+            }
+            <label class="text-bg-dark text-center">@showMail</label>
+            <InputText @bind-Value="mentor.Email" />
+            
+            
+            <label class="text-bg-dark text-center">Введите дату рождения</label>
+            <InputDate @bind-Value="mentor.BirthDay" />
+
+
+            <label class="text-bg-dark text-center">Введите дату начала професианальной деятельности</label>
+            <InputDate @bind-Value="mentor.ActivityStart" />
+
+            @{
+                string imageSRC = "wwwroot/images/default.jpeg";
+                if (mentor.PhotoPath == null)
+                    imageSRC = mentor.PhotoPath;
+
+            }
+            <img src="imageSRC" class="ImageShow" />
+            <InputFile @OnChange="LoadImage" />
+
+            @{
+                string showD;
+                if (mentor.BirthDay != null)
+                {
+                    showD = $"Изменить {mentor.Email}";
+                }
+                else
+                    showD = "Введите email ";
+            }
+            <label class="text-bg-dark text-center">@showD</label>
+            <InputText @bind-Value="mentor.Description" />
+
+            
+            
+
+        </div>
+    </EditForm>
+</div>
+
+
+@code {
+    [SupplyParameterFromForm] public MentorVM mentor { get; set; }
+
+    [Parameter] public EventCallback OnSubmit { get; set; }
+
+    [Parameter] public EventCallback LoadImage { get; set; }
+}

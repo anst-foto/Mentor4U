@@ -59,4 +59,21 @@ a, .btn-link {
         position: absolute;
         right: 0.75rem;
         top: 0.5rem;
+    }
+
+.imageShow{
+
+    width:150 px;
+
+    border: 1px solid rgba(0, 0, 0, 0.2);
+
+    padding: 5 px;
+
+    margin: 5 px;
+
+    border-radius:4 px;
+
+
+}
+
 
