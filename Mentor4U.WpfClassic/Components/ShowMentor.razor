@@ -2,13 +2,41 @@
 @using Mentor4U.WpfClassic.Models;
 
 
-@page "/show1"
+@page "/show"
 
-<div class="row text-center ">
-    <div class="col-4">
-        <div class="card"></div>
-    </div>
-</div>
+
+
+
+    
+        <div class="card m-1 border-1" >
+            <div class="card-header">
+                    <img src=@Path class="card-img" width="200" />
+                    <h2 class="text-center">@MentorVM.Name</h2>
+                    <h2 class="text-center">@MentorVM.LastName</h2>
+                    <h2 class="text-center">@MentorVM.Scill</h2>
+            </div>
+         
+         @if (ShowDetails==true)
+         {
+            <div class="card-body text-bg-info">
+               <h3 class="text-center">@MentorVM.Age.ToString("yyyy")</h3>
+               <h3 class="text-center">@MentorVM.Expiriens.ToString("yyyy mm")</h3>
+               <h3 class="text-center">@MentorVM.Phone</h3>
+               <h3 class="text-center"> @MentorVM.Email</h3>
+               <textarea> @MentorVM.Description</textarea>
+            </div>
+          }
+    @if (ShowButtons == true)
+    {
+             <div class="card-footer">
+                 <button onclick="DeleteCallback" class="text-center btn-danger"> Удалить</button>
+                 <button onclick="EditCallback" class="text-center btn-warning">Изменить</button>
+             </div>
+    }
+
+    
+        </div>
+    
 
 @code {
     [Parameter] public MentorVM MentorVM { get; set; }
@@ -16,4 +44,24 @@
     [Parameter] public bool ShowButtons { get; set; }
 
     [Parameter] public bool ShowDetails { get; set; }
+
+    [Parameter] public EventCallback<MentorVM> DeleteCallback { get; set; }
+
+    [Parameter] public EventCallback? EditCallback { get; set; }
+
+    public string Path
+    {
+        get => Path;
+        set
+        {
+            if (MentorVM.PhotoPath == null)
+                Path = "wwwroot/images/default.jpeg";
+
+            else
+                Path = MentorVM.PhotoPath;
+
+        }
+    }
+
+    
 }

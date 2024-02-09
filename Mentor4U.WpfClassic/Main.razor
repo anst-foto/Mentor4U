@@ -1,8 +1,17 @@
-﻿@using Microsoft.AspNetCore.Components.Routing
+﻿@using Mentor4U.Domain
+@using Mentor4U.WpfClassic.Models
+@using Mentor4U.WpfClassic.Repository
+@using Microsoft.AspNetCore.Components.Routing
 @using Microsoft.AspNetCore.Components.Web;
 @using Microsoft.AspNetCore.Components.WebView;
 @using Microsoft.JSInterop;
 @using Mentor4U.WpfClassic.Components;
+
+
+@inject IRepository<Mentor> Repository;
+
+
+
 @inherits LayoutComponentBase;
 
 
@@ -23,7 +32,7 @@
         </button>
     </div>
     <div class="col">
-        <button @onclick="RoadToAdmin" class="btn-link">
+        <button @onclick="@ShowAdmin" class="btn-link">
             <h3>Администрирование</h3>
         </button>/>
     </div>
@@ -31,11 +40,30 @@
 
 <div class=""></div>
 
+<Administration ShowAll=CanShowAdmin Choice="AdminChoice" >
+   
+       <div class="row">
+           <div class="col-3 bg-secondary navbar-text">
+               <button @onclick="FirstChoice" class="btn-info">Добавить ментора</button>
+               <br />
+               <button @onclick="SecondChoice" class="btn-info">Просмотр всеx менторов</button>
+               <br />
+               <button @onclick="ThirdChoice" class="btn-info">Изменить ментора</button>
+           </div>
+           <div class="col-9">
+               <ShowCrete>
+                   <EditMentor Mentor="VM" OnSubmit="(MentorVM vM)=> SubmitClick(VM)" />
+               </ShowCrete>
+               <ShowMentors>
+                    @foreach( var item in VMs)
+                    {
+                        <ShowMentor ShowButtons=true DeleteCallback="(MentorVM vm)=>DeleteClick(item)" ShowDetails="VMDetails"></ShowMentor>
+                    }
+                </ShowMentors>
+                <ShowEdit>
 
-
-@{
-    if (ShowAdmin = true)
-    {
-        <Administration/>
-    }
-}
+                </ShowEdit>
+           </div>
+       </div>
+   
+</Administration>

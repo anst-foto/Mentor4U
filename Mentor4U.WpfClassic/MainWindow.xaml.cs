@@ -31,6 +31,7 @@ public partial class MainWindow : Window
         serviceCollection.AddBlazorWebView();
         serviceCollection.AddBlazoredModal();
         
+        
        this.Resources.Add("services",serviceCollection.BuildServiceProvider());
         
     }

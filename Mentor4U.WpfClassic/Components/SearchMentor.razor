@@ -1,0 +1,21 @@
+﻿@using Mentor4U.Domain
+@using Mentor4U.WpfClassic.Models
+@using Microsoft.AspNetCore.Components.WebView;
+@using Mentor4U.WpfClassic.Repository;
+@inject IRepository<Mentor> Repository;
+
+
+    <div class="row text-center">
+     @if (CanSwow == true)
+     {
+        @ShowSeaarh;
+     }
+    </div>
+
+@code {
+    [Parameter] public RenderFragment ShowSeaarh { get; set; }
+
+    [Parameter] public bool CanSwow { get; set; }
+
+    [Parameter] public EventCallback Submit { get; set; }
+}

@@ -1,0 +1,13 @@
+﻿@using Microsoft.AspNetCore.Components.WebView;
+
+@if (CanShowBeginig == true)
+{
+    @ShowBeginig;
+}
+
+
+@code {
+    [Parameter] public RenderFragment ShowBeginig { get; set; }
+
+    [Parameter] public bool CanShowBeginig { get; set; }
+}

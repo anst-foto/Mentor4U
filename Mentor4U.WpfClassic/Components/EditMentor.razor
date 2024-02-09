@@ -10,11 +10,11 @@
 @page "/edit"
 
 
-<div>
-    <EditForm Model="mentor" OnSubmit="OnSubmit">
+
+    <EditForm Model="Mentor" OnSubmit="OnSubmit">
         <DataAnnotationsValidator/>
         <div class="row-cols-6 text-center alert alert-light">
-            @{
+             @{
                 string showName;
                 if (mentor.Name != null)
                 {
@@ -104,13 +104,13 @@
 
         </div>
     </EditForm>
-</div>
+
 
 
 @code {
-    [SupplyParameterFromForm] public MentorVM mentor { get; set; }
+    [SupplyParameterFromForm] public MentorVM Mentor { get; set; }
 
-    [Parameter] public EventCallback OnSubmit { get; set; }
+    [Parameter] public EventCallback<MentorVM> OnSubmit { get; set; }
 
-    [Parameter] public EventCallback LoadImage { get; set; }
+    [Parameter] public EventCallback LoadImage? { get; set; }
 }
