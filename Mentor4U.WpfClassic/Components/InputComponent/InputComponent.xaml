@@ -12,7 +12,9 @@
     </UserControl.Resources>
     
     <StackPanel Orientation="Horizontal">
-        <Label x:Name="Label" Content="Label"/>
-        <TextBox x:Name="Input"/>
+        <Label Content="{Binding Path=LabelName, Mode=OneWay}"
+               Style="{StaticResource StyleLabel}"/>
+        <TextBox Text="{Binding Path=Input}"
+                 Style="{StaticResource StyleInput}"/>
     </StackPanel>
 </UserControl>

@@ -7,7 +7,7 @@
         Height="600" Width="800"
         WindowState="Normal" WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize" WindowStyle="None"
-        Background="Transparent" AllowsTransparency="True"
+        Background="LightGray"
         MouseLeftButtonDown="UIElement_OnMouseLeftButtonDown">
     
     <Window.Resources>
@@ -49,10 +49,10 @@
             </StackPanel>
         
             <StackPanel Grid.Row="1">
-                <component:InputComponent>
-                    <component:InputComponent.LabelName>Login</component:InputComponent.LabelName>
-                </component:InputComponent>
-                <component:InputComponent>
+                <component:InputComponent x:Name="InputLogin" 
+                                          LabelName="Login"
+                                          Input="Test"/>
+                <component:InputComponent x:Name="InputPassword">
                     <component:InputComponent.LabelName>Password</component:InputComponent.LabelName>
                 </component:InputComponent>
             </StackPanel>
@@ -60,7 +60,8 @@
             <StackPanel Grid.Row="2" 
                         Style="{StaticResource StyleButtonsPanel}">
                 <Button Content="Авторизоваться"
-                        Style="{StaticResource StyleButtonAuth}"/>
+                        Style="{StaticResource StyleButtonAuth}"
+                        Click="ButtonBase_OnClick"/>
                 <Button Content="Восстановить пароль"
                         Style="{StaticResource StyleButtonRestore}"/>
                 <Button Content="Регистрация"

@@ -14,4 +14,9 @@ public partial class AuthWindow : Window
     {
         this.DragMove();
     }
+
+    private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+    {
+        MessageBox.Show($"{InputLogin.Input} {InputPassword.Input}");
+    }
 }

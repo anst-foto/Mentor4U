@@ -1,12 +1,43 @@
-﻿using System.Windows.Controls;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Windows.Controls;
 
 namespace Mentor4U.WpfClassic.Components.InputComponent;
 
-public partial class InputComponent : UserControl
+public partial class InputComponent : UserControl, INotifyPropertyChanged
 {
-    public string LabelName { get; set; }
+    private string _label;
+    public string LabelName
+    {
+        get => _label;
+        set => SetField(ref _label, value);
+    }
+
+    private string _input;
+    public string Input
+    {
+        get => _input;
+        set => SetField(ref _input, value);
+    }
+    
     public InputComponent()
     {
         InitializeComponent();
+        DataContext = this;
+    }
+
+    public event PropertyChangedEventHandler? PropertyChanged;
+
+    protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = null)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+
+    protected bool SetField<T>(ref T field, T value, [CallerMemberName] string? propertyName = null)
+    {
+        if (EqualityComparer<T>.Default.Equals(field, value)) return false;
+        field = value;
+        OnPropertyChanged(propertyName);
+        return true;
     }
 }
